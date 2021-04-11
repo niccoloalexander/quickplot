@@ -1,0 +1,342 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Install Package &#8212; quickplot 0.2.4 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="install-package">
+<h1>Install Package<a class="headerlink" href="#install-package" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">quickplot</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="package">
+<h1>Package<a class="headerlink" href="#package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="quickplot-bar">
+<h2>quickplot.bar<a class="headerlink" href="#quickplot-bar" title="Permalink to this headline">¶</a></h2>
+<p><strong>quickplot.<strong><strong>bar</strong></strong> ****(</strong><em>**table, key_column, value_column, title= None, x_label= None, y_label= None, frame_dimensions= (12, 9), e****rror_column= None, show_mean= True, annotate= True, process_data_type= True,  <strong>kwargs)</strong></em>
+**
+Draws a bar chart. Used to present a digestible comparison of values varying either by category or by a short range of periodic intervals.</p>
+<p>**Parameters:   **
+**table **: <em>Pandas DataFrame Object</em>
+Input dataset.
+**key_column **: <em>string</em>
+Column name attributing to chart keys placed on the x-axis.
+**value_column **: <em>string</em>
+Column name attributing to chart values placed on the y-axis.
+<strong>title</strong> : <em>string</em>_, optional_
+Chart title.
+<strong>x_label</strong> : <em>string</em>_, optional_
+X-axis label.
+**y_label **: <em>string</em>_, optional_
+Y-axis label.
+**frame_dimensions **: <em>tuple of integers or floats, optional</em>
+Length and width of the chart.
+**error_column **: <em>string, optional</em>
+Column name attributing to the confidence interval plotted as capped error bar lines.
+**show_mean **: <em>bool, optional</em>
+When show_mean is used, a dashed line is plotted onto the chart corresponding to the mean value across keys.
+**annotate **: <em>bool, optional</em>
+When annotate is used, text annotation is plotted onto the chart corresponsind to the value of each key as well as the mean value when applicable.
+<strong>process_data_type</strong> : <em>bool, optional</em>
+When process_data_type is used, the value  and error columns passed are converted to the float data type.
+**kwargs **: <em>key, value mappings</em>
+Other keyword arguments are passed through to <a class="reference external" href="https://matplotlib.org/3.2.1/api/_as_gen/matplotlib.pyplot.bar.html">matplotlib.pyplot.bar()</a>.</p>
+<p>Returns:   
+**fig, ax **: <em>Matplotlib figure and axes.</em>
+Matplotlib figure and axis objects with chart drawn onto them.</p>
+</div>
+<div class="section" id="quickplot-segmented-bar">
+<h2>quickplot.segmented_bar**<a class="headerlink" href="#quickplot-segmented-bar" title="Permalink to this headline">¶</a></h2>
+<p><strong>quickplot.<strong><strong>segmented_bar</strong></strong> ****(</strong><em><strong>table, key_column, value_column, title= None, x_label= None, y_label= None, frame_dimensions= (12</strong>**, 9), error_column= None, show_mean= True, annotate= True, process_data_type= True, <strong>kwargs)</strong></em>
+**
+Draws a segmented bar chart. Used to display values collected over two levels of aggregation.</p>
+<p>**Parameters:   **
+**table <strong>: <em>Pandas DataFrame Object</em>
+Input dataset.</strong>
+**key_column **: <em>string</em>
+Column name attributing to chart keys placed on the x-axis.
+**value_column **: <em>string</em>
+Column name attributing to chart values placed on the y-axis.
+<strong>segment_column</strong> : <em>string</em>
+Column name attributing to key groups.
+<strong>title</strong> : <em>string</em>_, optional_
+Chart title.
+<strong>x_label</strong> : <em>string</em>_, optional_
+X-axis label.
+**y_label **: <em>string</em>_, optional_
+Y-axis label.
+**frame_dimensions **: <em>tuple of integers or floats, optional</em>
+Length and width of the chart.
+**error_column **: <em>string, optional</em>
+Column name attributing to the confidence interval plotted as capped error bar lines.
+**show_mean **: <em>bool, optional</em>
+When show_mean is used, a dashed line is plotted onto the chart corresponding to the mean value across keys.
+**annotate **: <em>bool, optional</em>
+When annotate is used, text annotation is plotted onto the chart corresponsind to the value of each key as well as the mean value when applicable.
+<strong>process_data_type</strong> : <em>bool, optional</em>
+When process_data_type is used, the value  and error columns passed are converted to the float data type.
+**kwargs **: <em>key, value mappings</em>
+Other keyword arguments are passed through to <a class="reference external" href="https://matplotlib.org/3.2.1/api/_as_gen/matplotlib.pyplot.bar.html">matplotlib.pyplot.bar()</a>.</p>
+<p>Returns:   
+**fig, ax **: <em>Matplotlib figure and axes.</em>
+Matplotlib figure and axis objects with the chart drawn onto them.</p>
+</div>
+<div class="section" id="quickplot-plot-distribution">
+<h2>quickplot.plot_distribution<a class="headerlink" href="#quickplot-plot-distribution" title="Permalink to this headline">¶</a></h2>
+<p><strong>quickplot.<strong><strong>plot_distribution</strong></strong> ****(</strong><em>**table, value_column, segment_column= None, title= None, x_label= None, y_label= None, frame_dim****ensions= (12, 9), kde= False, bins= None, process_data_type= True, log10_transform= False,  <strong>kwargs)</strong></em>
+**
+Draws either the kernel density estimate of a distribution with an accompanying frequency histogram for a single feaure across each listed segment or the frequency histogram alone. Used to visualize the shape and characteristics of one or several value distributions.</p>
+<p>**Parameters:   **
+**table <strong>: <em>Pandas DataFrame Object</em>
+Input dataset.</strong>
+**value_column **: <em>string</em>
+Column name attributing to chart values placed on the y-axis.
+<strong>segment_column</strong> : <em>string</em>_, optional_
+Column name attributing to key groups.
+<strong>title</strong> : <em>string</em>_, optional_
+Chart title.
+<strong>x_label</strong> : <em>string</em>_, optional_
+X-axis label.
+**y_label **: <em>string</em>_, optional_
+Y-axis label.
+**frame_dimensions **: <em>tuple of integers or floats, optional</em>
+Length and width of the chart.
+**kde **: <em>bool, optional</em>
+When kde is used, a kernel density estimate is plotted with an accompanying frequency histogram. Alternatively, the frequency histogram alone is plotted.
+**bins **: <em>int, optional</em>
+Manually sets the amount of bins placed on each histogram. When None, Seaborn finds a suitable default using a reference rule.
+<strong>process_data_type</strong> : <em>bool, optional</em>
+When process_data_type is used, all  columns except for a passed segment column are converted to the float data type.
+<strong>log10_transform</strong> : <em>bool, optional</em>
+When log10_transform is used, all columns except for a passed segment column are transformed onto the log10 scale. When 0 values are present in any column, the column values are increased by 1 prior to transformation. 
+**kwargs **: <em>key, value mappings</em>
+Other keyword arguments are passed through to <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.distplot.html">seaborn.distplot()</a>.</p>
+<p>Returns:   
+**fig, ax **: <em>Matplotlib figure and axes.</em>
+Matplotlib figure and axis objects with the chart drawn onto them.</p>
+</div>
+<div class="section" id="quickplot-plot-distribution-summary">
+<h2>quickplot.plot_distribution_summary<a class="headerlink" href="#quickplot-plot-distribution-summary" title="Permalink to this headline">¶</a></h2>
+<p><strong>quickplot.<strong><strong>plot_distribution</strong></strong> ****(</strong><em><strong>table, value_column, segment_column= None, title= None, x_label= None, y_label= None</strong>**, frame_dimensions= ****’auto’, horizontal= True, violin= False, process_data_type= True, log10_transform= False,  <strong>kwargs)</strong></em>
+**
+Draws either a violin plot or a box plot for a single feature across each listed segment. Used to visualize the shape and characteristics of one or several value distributions.</p>
+<p>**Parameters:   **
+**table <strong>: <em>Pandas DataFrame Object</em>
+Input dataset.</strong>
+**value_column **: <em>string</em>
+Column name attributing to chart values placed on the y-axis.
+<strong>segment_column</strong> : <em>string</em>_, optional_
+Column name attributing to key groups.
+<strong>title</strong> : <em>string</em>_, optional_
+Chart title.
+<strong>x_label</strong> : <em>string</em>_, optional_
+X-axis label.
+**y_label **: <em>string</em>_, optional_
+Y-axis label.
+**frame_dimensions **: <em>‘auto’ or a tuple of integers or floats, optional</em>
+Length and width of the chart. When ‘auto’, a default setting is placed depending on the orientation and type of chart used.
+**horizontal **: <em>bool, optional</em>
+When horizontal is used, the plotted chart will be oriented horizontally. Otherwise, the chart will be oriented vertically. 
+**violin **: <em>bool, optional</em>
+When violin is used, a violin chart is plotted. Alternatively, a box chart is plotted.
+<strong>process_data_type</strong> : <em>bool, optional</em>
+When process_data_type is used, all  columns except for a passed segment column are converted to the float data type.
+<strong>log10_transform</strong> : <em>bool, optional</em>
+When log10_transform is used, all  columns except for a passed segment column are transformed onto the log10 scale. When 0 values are present in any column, the column values are increased by 1 prior to transformation. 
+**kwargs **: <em>key, value mappings</em>
+Other keyword arguments are passed through to <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.distplot.html">seaborn.distplot()</a>.</p>
+<p>Returns:   
+**fig, ax **: <em>Matplotlib figure and axes.</em>
+Matplotlib figure and axis objects with the chart drawn onto them.</p>
+</div>
+<div class="section" id="quickplot-scatter">
+<h2>quickplot.scatter**<a class="headerlink" href="#quickplot-scatter" title="Permalink to this headline">¶</a></h2>
+<p><strong>quickplot.<strong><strong>scatter</strong></strong> ****(</strong><em><strong>table, x_column, y_column,</strong>** segment_column= None,**** title= None, x_label= None, y_label= None, fr****ame_dimensions= (12, 9), process_data_type= True, log10_transform= False,  <strong>kwargs)</strong></em>
+**
+Draws a scatter plot for two features across all listed segments. Used to visualize the relational characteristics present in any two features.</p>
+<p>**Parameters:   **
+**table <strong>: <em>Pandas DataFrame Object</em>
+Input dataset.</strong>
+**x_column **: <em>string</em>
+Column name attributing to chart keys placed on the x-axis.
+**y_column **: <em>string</em>
+Column name attributing to chart values placed on the y-axis.
+<strong>segment_column</strong> : <em>string, optional</em>
+Column name attributing to key groups.
+<strong>title</strong> : <em>string</em>_, optional_
+Chart title.
+<strong>x_label</strong> : <em>string</em>_, optional_
+X-axis label.
+**y_label **: <em>string</em>_, optional_
+Y-axis label.
+**frame_dimensions **: <em>tuple of integers or floats, optional</em>
+Length and width of the chart.
+<strong>process_data_type</strong> : <em>bool, optional</em>
+When process_data_type is used, all  columns except for a passed segment column are converted to the float data type.
+<strong>log10_transform</strong> : <em>bool, optional</em>
+When log10_transform is used, all columns except for a passed segment column are transformed onto the log10 scale. When 0 values are present in any column, the column values are increased by 1 prior to transformation. 
+**kwargs **: <em>key, value mappings</em>
+Other keyword arguments are passed through to <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.scatterplot.html">seaborn.scatterplot()</a>.</p>
+<p>Returns:   
+**fig, ax **: <em>Matplotlib figure and axes.</em>
+Matplotlib figure and axis objects with the chart drawn onto them.</p>
+</div>
+<div class="section" id="quickplot-correlation-heatmap">
+<h2>quickplot.correlation_heatmap<a class="headerlink" href="#quickplot-correlation-heatmap" title="Permalink to this headline">¶</a></h2>
+<p><strong>quickplot.<strong><strong>heatmap</strong></strong> ****(</strong><em><strong>table, title= None, <strong><strong>frame_dimensions= (12, 9), <strong><strong>annotate= True, color_map= ‘Diverging’, color_blind= Fals</strong></strong>e, segment_column= None, segment= None, process_data_type= True, log10_transform= False</strong></strong>,</strong>** <strong>kwargs</strong></em><strong>)</strong>
+**
+Draws a heatmap detailing correlation values across all numerical features in the presented dataset. Used to summarize feature interactions and the direction of feature relationships.</p>
+<p>**Parameters:   **
+<strong>table <strong>: <em>Pandas DataFrame Object</em>
+Input dataset.</strong>
+<strong>title</strong> : <em>string</em>_, optional_
+Chart title.</strong>
+**frame_dimensions **: <em>tuple of integers or floats, optional</em>
+Length and width of the chart.
+**annotate **: <em>bool, optional</em>
+When annotate is used, text annotation is plotted onto the chart corresponsing to the value of cell in the correlation matrix.
+**color_map **: <em>‘Diverging’ or strin__g, optional</em>
+When set to_ ‘Diverging’,_ a default diverging color map is applied. Alternatively, this parameter could be set to an <a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html">existing Matplotlib color map</a>.
+**color_blind <strong>:</strong> **<em>bool, optional</em>
+When color_blind is used and color_map is set to <em>‘Diverging’</em>, the <a class="reference external" href="https://gotellilab.github.io/GotelliLabMeetingHacks/NickGotelli/ViridisColorPalette.html">viridis</a> color palette is applied as the it translates well to grayscale. 
+<strong>segment_column</strong> : <em>string, optional</em>
+Column name attributing to key groups. Same output as <em>None</em> when the segment argument is also <em>None</em>.
+**segment **: <em>string</em> <em>(category present in segment column), optional</em>
+When an applicable segment column is passed and an applicable segment is passed, a correlation heatmap for the given segment alone is generated.
+<strong>process_data_type</strong> : <em>bool, optional</em>
+When process_data_type is used, all  columns except for a passed segment column are converted to the float data type.
+<strong>log10_transform</strong> : <em>bool, optional</em>
+When log10_transform is used, all  columns except for a passed segment column are transformed onto the log10 scale. When 0 values are present in any column, the column values are increased by 1 prior to transformation. 
+**kwargs **: <em>key, value mappings</em>
+Other keyword arguments are passed through to <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.heatmap.html">seaborn.heatmap()</a>.</p>
+<p>Returns:   
+**fig, ax **: <em>Matplotlib figure and axes.</em>
+Matplotlib figure and axis objects with the chart drawn onto them.</p>
+</div>
+<div class="section" id="quickplot-pairplot">
+<h2>quickplot.pairplot<a class="headerlink" href="#quickplot-pairplot" title="Permalink to this headline">¶</a></h2>
+<p><strong>quickplot.<strong><strong>pairplot</strong></strong> ****(</strong><em><strong>table, segment_column= None, title= None, frame_dimensions= (12, 10), kde= ‘auto’,</strong></em>** process_data_type= True, log10_transform= False, <strong>_</strong> <strong>kwargs</strong>_<strong>)</strong>
+**
+Draws scatter plots for every pair of features present in a data set and either a kernel density estimate or histogram for every individual feature present across all listed segments. Used to present distribution and relational characteristics across a feature set.</p>
+<p>**Parameters:   **
+<strong>table <strong>: <em>Pandas DataFrame Object</em>
+Input dataset.</strong>
+<strong>segment_column</strong> : <em>string</em>
+Column name attributing to key groups.
+<strong>title</strong> : <em>string</em>_, optional_
+Chart title.</strong>
+**frame_dimensions **: <em>tuple of integers or floats, optional</em>
+Length and width of the chart.
+**hist : **<em>bool, optional</em>
+When hist is used, the histograms are plotted across the diagonal.
+<strong>process_data_type</strong> : <em>bool, optional</em>
+When process_data_type is used, all  columns except for a passed segment column are converted to the float data type.
+<strong>log10_transform</strong> : <em>bool, optional</em>
+When log10_transform is used, all  columns except for a passed segment column are transformed onto the log10 scale. When 0 values are present in any column, the column values are increased by 1 prior to transformation. 
+**kwargs **: <em>key, value mappings</em>
+Other keyword arguments are passed through to <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.pairplot.html">seaborn.pairplot()</a>.</p>
+<p>Returns:   
+**fig, ax **: <em>Matplotlib figure and axes.</em>
+Matplotlib figure and axis objects with the chart drawn onto them.</p>
+</div>
+</div>
+<div class="section" id="change-log">
+<h1>Change Log<a class="headerlink" href="#change-log" title="Permalink to this headline">¶</a></h1>
+<p>0.2.4 2021/04/11</p>
+<ul class="simple">
+<li><p>Added package to PyPI. Use pip instlall quickplot to run.</p></li>
+<li><p>Initial public commit.</p></li>
+</ul>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">quickplot</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Niccolo Alexander I. Hamlin.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/quickplot.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
