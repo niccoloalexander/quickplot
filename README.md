@@ -4,5 +4,5 @@ This is a beta release of the quickplot module, a wrapper around pandas, matplot
 
 To install, run:
 ```
-pip install quickplot
+pip install quickplotlib
 ```
