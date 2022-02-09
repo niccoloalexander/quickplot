@@ -6,7 +6,7 @@
 """
 Version:
 --------
-- quickplot v0.2.4
+- quickplot v0.3
 """
 
 import numpy as np
